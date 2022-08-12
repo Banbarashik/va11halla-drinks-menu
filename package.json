@@ -1,0 +1,24 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Banbarashik/Restaurant-page.git"
+  },
+  "author": "Banbarashik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Banbarashik/Restaurant-page/issues"
+  },
+  "homepage": "https://github.com/Banbarashik/Restaurant-page#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  }
+}
