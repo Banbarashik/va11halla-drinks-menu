@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "cyberpunkwaifus";
+  src: url(../assets/fonts/CyberpunkWaifus.woff) format("woff"),
+    url(../assets/fonts/CyberpunkWaifus.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+
+  background-color: #000;
+
+  font-family: "cyberpunkwaifus";
+  color: #fff;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
+}
