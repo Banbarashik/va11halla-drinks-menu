@@ -1,23 +1,27 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "production",
+  mode: 'production',
   entry: {
-    index: "./src/index.js",
+    index: './src/js/controller.js',
   },
   module: {
     rules: [
       {
         test: /\.html$/i,
-        use: ["html-loader"],
+        use: ['html-loader'],
+      },
+      {
+        test: /\.(jpeg|jpg|png|gif|svg|webp)$/i,
+        type: 'asset/resource',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Restaurant page",
-      template: "src/template.html",
+      title: 'Restaurant page',
+      template: 'src/template.html',
     }),
   ],
 };
