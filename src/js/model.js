@@ -9,8 +9,23 @@ const _staffImgs = {};
 const _staffImgsContext = require.context('./../assets/images/staff', false);
 importAll(_staffImgs, _staffImgsContext);
 
+///////////////////////////////////////////////////////////
+
+export const setCurrentCategory = category =>
+  (state.menu.currentCategory = category);
+
+export const setCurrentSubcategory = subcategory =>
+  (state.menu.currentSubcategory = subcategory);
+
 export const state = {
   menu: {
+    currentCategory: '',
+    currentSubcategory: '',
+    categories: {
+      name: ['B', 'C', 'F', 'G', 'M', 'P', 'S', 'Z'],
+      flavor: ['sweet', 'bitter', 'sour', 'spicy', 'bubbly'],
+      type: ['girly', 'manly', 'classic', 'classy', 'promo'],
+    },
     drinks: [
       {
         name: 'Bad Touch',

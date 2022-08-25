@@ -102,7 +102,7 @@
     }
   }
 
-  &__drink-item {
+  &__drinks-item {
     width: 48%;
     padding: 1rem 1rem 0 1rem;
     border: 0.2rem solid $font-color;
@@ -120,7 +120,7 @@
       margin: 0 3% 1% 0;
     }
 
-    &--title {
+    &--title-and-price {
       font-size: 2.2rem;
     }
 
@@ -132,4 +132,20 @@
       width: auto;
     }
   }
+}
+
+.adelhyde {
+  color: #f21637;
+}
+.powdered_delta {
+  color: #87acf3;
+}
+.bronson_extract {
+  color: #ffd230;
+}
+.flanergide {
+  color: #a6d26d;
+}
+.karmotrine {
+  color: #47d4d4;
 }
