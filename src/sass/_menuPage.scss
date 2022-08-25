@@ -1,0 +1,135 @@
+.menu {
+  &__page {
+    padding: 10vh 10vw;
+  }
+
+  &__interface {
+    height: 100%;
+    padding: 0 1rem 1.5rem 1rem;
+
+    background-color: $font-color;
+
+    overflow: hidden;
+  }
+
+  &__navigation-bar {
+    display: flex;
+
+    color: $bg-color;
+    font-size: calc($base-font-size + 0.5vw);
+
+    list-style: none;
+  }
+
+  &__category {
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      background-color: $bg-color;
+      color: $font-color;
+    }
+  }
+
+  &__search-by-category {
+    margin-bottom: 5vh;
+  }
+
+  &__drinks-display {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+
+    // height = 100% of the parent - font-size of menu categories
+    // - top and bottom paddings of menu categories
+    height: calc(100% - calc($base-font-size + 0.5vw) - 1rem);
+    padding: 4%;
+
+    background-color: $bg-color;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: 1fr 1.5fr;
+    }
+  }
+
+  &__drinks-category {
+    font-size: calc(1rem + 1.3vw);
+    padding-right: 3rem;
+  }
+
+  &__subcategories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 5vh;
+
+    list-style: none;
+  }
+
+  &__subcategory {
+    opacity: 0.6;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__drinks-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 2.5rem;
+
+    padding-right: 2rem;
+
+    overflow-y: scroll;
+
+    list-style: none;
+
+    &::-webkit-scrollbar {
+      width: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__drink-item {
+    width: 48%;
+    padding: 1rem 1rem 0 1rem;
+    border: 0.2rem solid $font-color;
+    border-radius: 2rem;
+
+    font-size: $base-font-size;
+
+    &--img {
+      float: left;
+
+      width: 15%;
+      min-width: 6rem;
+      border: 0.1rem solid $font-color;
+      border-radius: 25%;
+      margin: 0 3% 1% 0;
+    }
+
+    &--title {
+      font-size: 2.2rem;
+    }
+
+    p {
+      margin-bottom: 3%;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      width: auto;
+    }
+  }
+}

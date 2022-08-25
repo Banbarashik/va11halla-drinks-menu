@@ -7,32 +7,146 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div id="content" class="homepage">
-      <p class="homepage--description">
-        On a small road just seconds away from the main street, somewhere near
-        the slums, you can find the Hall A of the BTC-certified bar coded VA-11.
-        But that's a mouthful, so we just call it Valhalla — a small oasis in
-        the middle of the concrete desert. A fountain of spirits waiting for
-        tired souls.
-      </p>
-      <svg
-        class="bar-img"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 1005 450.8"
-      >
-        <image
-          width="1340"
-          height="601"
-          xlink:href="assets/images/bar_entrance_closed.png"
-          transform="scale(0.75)"
-        ></image>
-        <polygon
-          class="bar-img_entrance"
-          points="443,383 442,113 547,105 544,361"
-        />
-      </svg>
+    <div id="content" class="menu__page">
+      <div class="menu__interface">
+        <ul class="menu__navigation-bar">
+          <li class="menu__category active">By Name</li>
+          <li class="menu__category">By Flavor</li>
+          <li class="menu__category">By Type</li>
+        </ul>
+        <div class="menu__drinks-display">
+          <div class="menu__drinks-category">
+            <p class="menu__search-by-category">
+              <span>Search by:</span>
+              <span class="menu__active-category">Name</span>
+            </p>
+            <ul class="menu__subcategories">
+              <li><span class="menu__subcategory active">B</span></li>
+              <li><span class="menu__subcategory">C</span></li>
+              <li><span class="menu__subcategory">F</span></li>
+              <li><span class="menu__subcategory">G</span></li>
+              <li><span class="menu__subcategory">M</span></li>
+              <li><span class="menu__subcategory">P</span></li>
+              <li><span class="menu__subcategory">S</span></li>
+              <li><span class="menu__subcategory">Z</span></li>
+            </ul>
+          </div>
+          <ul class="menu__drinks-list">
+            <li class="menu__drink-item">
+              <img
+                class="menu__drink-item--img"
+                src="./assets/images/drinks/Bad_Touch.png"
+                alt="Bad Touch"
+              />
+              <p class="menu__drink-item--title">
+                Bad Touch - <span class="menu__drink--price">$150</span>
+              </p>
+              <p class="menu__drink--ingredients">
+                A Bad Touch is 2 Bronson Extract, 2 Powdered Delta, 2 Flanergide
+                and 4 Karmotrine. All on the rocks and mixed.
+              </p>
+              <p class="menu__drink--description">
+                We're nothing but mammals after all.
+              </p>
+              <p class="menu__drink--categories">Sour, Classy, Vintage</p>
+            </li>
+            <li class="menu__drink-item">
+              <img
+                class="menu__drink-item--img"
+                src="./assets/images/drinks/Beer.png"
+                alt="Beer"
+              />
+              <p class="menu__drink-item--title">
+                Beer - <span class="menu__drink--price">$200</span>
+              </p>
+              <p class="menu__drink--ingredients">
+                A Beer is 1 Adelhyde, 2 Bronson Extract, 1 Powdered Delta, 2
+                Flanergide and 4 Karmotrine. All mixed.
+              </p>
+              <p class="menu__drink--description">
+                Traditionally brewed beer has become a luxury, but this one's
+                pretty close to the real deal...
+              </p>
+              <p class="menu__drink--categories">Bubbly, Classic, Vintage</p>
+            </li>
+            <li class="menu__drink-item">
+              <img
+                class="menu__drink-item--img"
+                src="./assets/images/drinks/Bleeding_Jane.png"
+                alt="Bleeding Jane"
+              />
+              <p class="menu__drink-item--title">
+                Bleeding Jane - <span class="menu__drink--price">$200</span>
+              </p>
+              <p class="menu__drink--ingredients">
+                A Bleeding Jane is 1 Bronson Extract, 3 Powdered Delta and 3
+                Flanergide. All blended.
+              </p>
+              <p class="menu__drink--description">
+                Say the name of this drink three times in front of a mirror and
+                you'll look like a fool.
+              </p>
+              <p class="menu__drink--categories">Spicy, Classic, Sobering</p>
+            </li>
+            <li class="menu__drink-item">
+              <img
+                class="menu__drink-item--img"
+                src="./assets/images/drinks/Bloom_Light.png"
+                alt="Bloom Light"
+              />
+              <p class="menu__drink-item--title">
+                Bloom Light - <span class="menu__drink--price">$230</span>
+              </p>
+              <p class="menu__drink--ingredients">
+                A Bloom Light is 4 Adelhyde, 1 Powdered Delta, 2 Flanergide and
+                3 Karmotrine. All aged, on the rocks and mixed.
+              </p>
+              <p class="menu__drink--description">
+                It's so unnecessarily brown...
+              </p>
+              <p class="menu__drink--categories">Spicy, Promo, Bland</p>
+            </li>
+            <li class="menu__drink-item">
+              <img
+                class="menu__drink-item--img"
+                src="./assets/images/drinks/Blue_Fairy.png"
+                alt="Blue Fairy"
+              />
+              <p class="menu__drink-item--title">
+                Blue Fairy - <span class="menu__drink--price">$170</span>
+              </p>
+              <p class="menu__drink--ingredients">
+                A Blue Fairy is 4 Adelhyde, 1 Flanergide and (optional)
+                Karmotrine. All aged and mixed.
+              </p>
+              <p class="menu__drink--description">
+                One of these will make all your teeth turn blue. Hope you
+                brushed them well.
+              </p>
+              <p class="menu__drink--categories">Sweet, Girly, Soft</p>
+            </li>
+            <li class="menu__drink-item">
+              <img
+                class="menu__drink-item--img"
+                src="./assets/images/drinks/Brandtini.png"
+                alt="Brandtini"
+              />
+              <p class="menu__drink-item--title">
+                Brandtini - <span class="menu__drink--price">$250</span>
+              </p>
+              <p class="menu__drink--ingredients">
+                A Brandtini is 6 Adelhyde, 3 Powdered Delta and 1 Karmotrine.
+                All aged and mixed.
+              </p>
+              <p class="menu__drink--description">
+                8 out of 10 smug assholes would recommend it but they're too
+                busy being smug assholes.
+              </p>
+              <p class="menu__drink--categories">Sweet, Classy, Happy</p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

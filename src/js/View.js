@@ -1,16 +1,16 @@
 export default class View {
-  _parentElement = document.getElementById("content");
+  _parentElement = document.querySelector('#content');
 
   render(data) {
     this._data = data;
 
-    const markup = _generateMarkup();
+    const markup = this._generateMarkup();
 
     this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
   _clear() {
-    this._parentElement.innerHTML = "";
+    this._parentElement.innerHTML = '';
   }
 }
