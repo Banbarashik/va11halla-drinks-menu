@@ -37,8 +37,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 4 },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: true,
           blended: false,
         },
@@ -57,8 +57,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 4 },
         ],
         options: {
-          onTheRocks: false,
           aged: false,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -76,8 +76,8 @@ export const state = {
           { name: 'Flanergide', quantity: 3 },
         ],
         options: {
-          onTheRocks: false,
           aged: false,
+          onTheRocks: false,
           mixed: false,
           blended: true,
         },
@@ -96,8 +96,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 3 },
         ],
         options: {
-          onTheRocks: true,
           aged: true,
+          onTheRocks: true,
           mixed: true,
           blended: false,
         },
@@ -114,8 +114,8 @@ export const state = {
           { name: 'Karmotrine', quantity: null },
         ],
         options: {
-          onTheRocks: false,
           aged: true,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -133,8 +133,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 1 },
         ],
         options: {
-          onTheRocks: false,
           aged: true,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -152,8 +152,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 5 },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: true,
           blended: false,
         },
@@ -171,8 +171,8 @@ export const state = {
           { name: 'Karmotrine', quantity: null },
         ],
         options: {
-          onTheRocks: false,
           aged: false,
+          onTheRocks: false,
           mixed: false,
           blended: true,
         },
@@ -190,8 +190,8 @@ export const state = {
           { name: 'Karmotrine', quantity: null },
         ],
         options: {
-          onTheRocks: false,
           aged: true,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -208,8 +208,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 9 },
         ],
         options: {
-          onTheRocks: false,
           aged: true,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -228,8 +228,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 1 },
         ],
         options: {
-          onTheRocks: false,
           aged: false,
+          onTheRocks: false,
           mixed: false,
           blended: true,
         },
@@ -247,8 +247,8 @@ export const state = {
           { name: 'Karmotrine', quantity: null },
         ],
         options: {
-          onTheRocks: false,
           aged: true,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -267,8 +267,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 2 },
         ],
         options: {
-          onTheRocks: false,
           aged: false,
+          onTheRocks: false,
           mixed: false,
           blended: true,
         },
@@ -288,8 +288,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 2 },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: false,
           blended: true,
         },
@@ -307,8 +307,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 2 },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: false,
           blended: true,
         },
@@ -328,8 +328,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 3 },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: true,
           blended: false,
         },
@@ -349,8 +349,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 3 },
         ],
         options: {
-          onTheRocks: false,
           aged: true,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -368,8 +368,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 4 },
         ],
         options: {
-          onTheRocks: false,
           aged: false,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -387,8 +387,8 @@ export const state = {
           { name: 'Karmotrine', quantity: null },
         ],
         options: {
-          onTheRocks: false,
           aged: true,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -406,8 +406,8 @@ export const state = {
           { name: 'Karmotrine', quantity: null },
         ],
         options: {
-          onTheRocks: false,
           aged: false,
+          onTheRocks: false,
           mixed: true,
           blended: false,
         },
@@ -424,8 +424,8 @@ export const state = {
           { name: 'Karmotrine', quantity: null },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: false,
           blended: true,
         },
@@ -443,8 +443,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 3 },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: true,
           blended: false,
         },
@@ -464,8 +464,8 @@ export const state = {
           { name: 'Karmotrine', quantity: 4 },
         ],
         options: {
-          onTheRocks: true,
           aged: false,
+          onTheRocks: true,
           mixed: true,
           blended: false,
         },

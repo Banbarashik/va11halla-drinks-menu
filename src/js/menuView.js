@@ -99,29 +99,22 @@ class menuView extends View {
               ${drink.name} - $${drink.price}
             </p>
             <p class="menu__drinks-item--ingredients">
-              ${this._generateMarkupRecipe(drink)}
+              A ${drink.name} is
+              ${this._generateMarkupIngredients(drink.ingredients)}.
+              All ${this._generateMarkupDrinkOptions(drink.options)}.
             </p>
             <p class="menu__drinks-item--description">
               "${drink.description}"
             </p>
-            <p class="menu__drink--categories">${drink.categories.join(
-              ', '
-            )}</p>
+            <p class="menu__drink--categories">${drink.categories
+              .join(', ')
+              .replace(/\b\w/g, c => c.toUpperCase())}
+            </p>
             </li>
           `;
         }.bind(this)
       )
       .join('');
-  }
-
-  _generateMarkupRecipe(drink) {
-    return `
-    A ${drink.name} is ${this._generateMarkupIngredients(
-      drink.ingredients
-    )}. All ${drink.options.aged ? 'aged' : ''} ${
-      drink.options.onTheRocks ? 'on the rocks' : ''
-    } ${drink.options.mixed ? 'mixed' : 'blended'}
-    `;
   }
 
   _generateMarkupIngredients(ingrs) {
@@ -138,6 +131,14 @@ class menuView extends View {
       })
       .join('')
       .trim();
+  }
+
+  _generateMarkupDrinkOptions(opts) {
+    return `
+      ${opts.aged && opts.onTheRocks ? 'aged,' : opts.aged ? 'aged and' : ''}
+      ${opts.onTheRocks ? 'on the rocks and' : ''}
+      ${opts.mixed ? 'mixed' : 'blended'}
+    `.trim();
   }
 
   _createFilteredDrinksArr() {
