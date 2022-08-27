@@ -8,3 +8,6 @@ export function importAll(obj, requireFunction) {
     obj[propName] = requireFunction(key);
   });
 }
+
+export const capitalizeFirstLetter = str =>
+  str.replace(/^\w/, c => c.toUpperCase());

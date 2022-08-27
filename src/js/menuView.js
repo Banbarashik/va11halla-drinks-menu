@@ -1,86 +1,93 @@
 import View from './View';
+import { capitalizeFirstLetter } from './helper';
+import BTCicon from './../assets/images/BTC_icon.jpg';
 
 class menuView extends View {
   _data;
 
-  // addHandlerRenderSubcategoriesAndDrinks(handler) {
-  //   this._parentElement.addEventListener('click', function (e) {
-  //     const categoryEl = e.target.closest('.menu__category');
-  //     const subcategoryEl = e.target.closest('.menu__subcategory');
-
-  //     if (!categoryEl && !subcategoryEl) return;
-
-  //     const { category } = categoryEl.dataset;
-  //     const { subcategory } = subcategoryEl.dataset;
-
-  //     handler(category, subcategory);
-  //   });
-  // }
-
-  addHandlerRenderSubcategories(handler) {
+  addHandlerRenderSubcategoriesAndDrinks(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const categoryEl = e.target.closest('.menu__category');
-
-      if (!categoryEl) return;
-
-      const { category } = categoryEl.dataset;
-
-      handler(category, undefined);
-    });
-  }
-
-  addHandlerRenderDrinks(handler) {
-    this._parentElement.addEventListener('click', function (e) {
       const subcategoryEl = e.target.closest('.menu__subcategory');
 
-      if (!subcategoryEl) return;
+      if (!categoryEl && !subcategoryEl) return;
 
-      const { subcategory } = subcategoryEl.dataset;
+      const category = categoryEl?.dataset.category;
+      const subcategory = subcategoryEl?.dataset.subcategory;
 
-      handler(undefined, subcategory);
+      handler(category, subcategory);
     });
   }
 
   _generateMarkup() {
     return `
       <div class="menu__interface">
+        <div class="menu__welcome-window ${
+          this._data.currentCategory ? 'hidden' : ''
+        }">
+          <img src="${BTCicon}" alt="BTC recipe book">
+          <div>
+            <p>Welcome to VA-11 HALL-A.</p>
+            <p>Use the navigation bar to start browsing.</p>
+          </div>
+        </div>
         <ul class="menu__navigation-bar">
-          <li class="menu__category" data-category="name">By Name</li>
-          <li class="menu__category" data-category="flavor">By Flavor</li>
-          <li class="menu__category" data-category="type">By Type</li>
+          <li class="menu__category ${
+            this._data.currentCategory === 'name' ? 'active' : ''
+          }" data-category="name">By Name</li>
+          <li class="menu__category ${
+            this._data.currentCategory === 'flavor' ? 'active' : ''
+          }" data-category="flavor">By Flavor</li>
+          <li class="menu__category ${
+            this._data.currentCategory === 'type' ? 'active' : ''
+          }" data-category="type">By Type</li>
         </ul>
-        <div class="menu__drinks-display">
-          <div class="menu__drinks-category">
-          <p class="menu__search-by-category">
+        <div class="menu__main-frame">
+          <div class="menu__subcategories">
+          <p class="menu__search-by ${
+            this._data.currentCategory ? '' : 'hidden'
+          }">
             <span>Search by:</span>
-            <span class="menu__active-category">
-              ${this._data.currentCategory}
+            <span>
+              ${capitalizeFirstLetter(this._data.currentCategory)}
             </span>
           </p>
-          <ul class="menu__subcategories">
-            ${this._generateMarkupCategories()}
+          <ul class="menu__subcategories-list ${
+            this._data.currentCategory === 'name'
+              ? 'menu__subcategories-name'
+              : ''
+          }">
+            ${this._generateMarkupSubcategories()}
           </ul>
           </div>
-          <ul class="menu__drinks-list">
-            ${this._generateMarkupDrinks()}
-          </ul>
+          <div class="menu__drinks">
+            <ul class="menu__drinks-list">
+              ${this._generateMarkupDrinks()}
+            </ul>
+          </div>
         </div>
       </div>
     `;
   }
 
-  _generateMarkupCategories() {
+  _generateMarkupSubcategories() {
     const subcategoryArr = this._data.categories[this._data.currentCategory];
 
-    if (!subcategoryArr) return;
+    if (!subcategoryArr) return '';
 
     return subcategoryArr
-      .map(
-        sub =>
-          `<li><span class="menu__subcategory" data-subcategory="${sub}">${sub} ${
-            this._data.currentCategory !== 'name' ? 'Drinks' : ''
-          }</span></li>`
-      )
+      .map(sub => {
+        return `
+          <li>
+            <span class="menu__subcategory ${
+              this._data.currentSubcategory === sub ? 'active' : ''
+            }" data-subcategory="${sub}">
+            ${capitalizeFirstLetter(sub)}
+            ${this._data.currentCategory !== 'name' ? 'Drinks' : ''}
+            </span>
+          </li>
+        `;
+      })
       .join('');
   }
 
@@ -89,24 +96,26 @@ class menuView extends View {
       .map(
         function (drink) {
           return `
-            <li class="menu__drinks-item">
+            <li class="menu__drink">
             <img
-              class="menu__drinks-item--img"
+              class="menu__drink-img"
               src="${drink.image}"
               alt="${drink.name}"
             />
-            <p class="menu__drinks-item--title-and-price">
-              ${drink.name} - $${drink.price}
+            <p class="menu__drink-header">
+              <span class="menu__drink-name">${drink.name}</span> - <span>$${
+            drink.price
+          }</span>
             </p>
-            <p class="menu__drinks-item--ingredients">
+            <p class="menu__drink-ingredients">
               A ${drink.name} is
               ${this._generateMarkupIngredients(drink.ingredients)}.
               All ${this._generateMarkupDrinkOptions(drink.options)}.
             </p>
-            <p class="menu__drinks-item--description">
+            <p class="menu__drink-description">
               "${drink.description}"
             </p>
-            <p class="menu__drink--categories">${drink.categories
+            <p class="menu__drink-categories">${drink.categories
               .join(', ')
               .replace(/\b\w/g, c => c.toUpperCase())}
             </p>

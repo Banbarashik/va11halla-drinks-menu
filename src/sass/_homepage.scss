@@ -1,34 +1,32 @@
-.homepage {
-  &__description {
-    position: absolute;
-    z-index: 1;
-    top: 5vh;
-    right: 10vw;
+.homepage__description {
+  position: absolute;
+  z-index: 1;
+  top: 5vh;
+  right: 10vw;
 
-    max-width: 57rem;
-    margin-left: 10vw;
+  max-width: 57rem;
+  margin-left: 10vw;
 
-    font-size: calc($base-font-size + 0.5vw);
+  font-size: calc($base-font-size + 0.5vw);
+}
+
+.bar-img {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  max-width: 134rem;
+  max-height: 60vh;
+
+  &--entrance {
+    opacity: 0;
+
+    cursor: pointer;
   }
 
-  &__bar-img {
-    position: absolute;
-    bottom: 10vh;
-    left: 50%;
-    transform: translateX(-50%);
-
-    max-width: 134rem;
-    max-height: 60vh;
-
-    &--entrance {
-      opacity: 0;
-
-      cursor: pointer;
-    }
-
-    @media only screen and (max-width: $bp-medium) {
-      bottom: 50%;
-      transform: translate(-50%, 50%);
-    }
+  @media only screen and (max-width: $bp-medium) {
+    bottom: 50%;
+    transform: translate(-50%, 50%);
   }
 }

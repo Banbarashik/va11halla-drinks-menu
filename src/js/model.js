@@ -11,8 +11,10 @@ importAll(_staffImgs, _staffImgsContext);
 
 ///////////////////////////////////////////////////////////
 
-export const setCurrentCategory = category =>
-  (state.menu.currentCategory = category);
+export const setCurrentCategory = category => {
+  state.menu.currentCategory = category;
+  state.menu.currentSubcategory = '';
+};
 
 export const setCurrentSubcategory = subcategory =>
   (state.menu.currentSubcategory = subcategory);
