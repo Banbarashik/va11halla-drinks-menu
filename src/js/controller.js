@@ -5,7 +5,10 @@ import homepageView from './homepageView';
 import menuView from './menuView';
 
 function controlHomepage() {
-  menuView.render(model.state.menu);
+  model.setCurrentCategory();
+  model.setCurrentSubcategory();
+
+  homepageView.render();
 }
 
 function controlMenu(category, subcategory) {
@@ -17,8 +20,9 @@ function controlMenu(category, subcategory) {
 
 function init() {
   homepageView.render();
-  homepageView.addHandlerRenderMenu(controlHomepage);
+  homepageView.addHandlerRenderMenu(controlMenu);
   menuView.addHandlerRenderSubcategoriesAndDrinks(controlMenu);
+  menuView.addHandlerReturnToStreet(controlHomepage);
 }
 
 init();

@@ -19,6 +19,14 @@ class menuView extends View {
     });
   }
 
+  addHandlerReturnToStreet(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.exit');
+
+      if (btn) handler();
+    });
+  }
+
   _generateMarkup() {
     return `
       <div class="menu__interface">
@@ -67,6 +75,7 @@ class menuView extends View {
           </div>
         </div>
       </div>
+      <button class="exit"><-- back to the street</button>
     `;
   }
 

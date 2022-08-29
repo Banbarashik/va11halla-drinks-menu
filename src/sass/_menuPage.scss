@@ -1,6 +1,10 @@
 .menu {
   &__page {
     padding: 10vh 10vw;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 10vh 0 0 0;
+    }
   }
 
   &__interface {
