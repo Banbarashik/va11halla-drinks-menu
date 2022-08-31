@@ -1,4 +1,4 @@
-import '../sass/main.scss';
+import './../sass/main.scss';
 
 import * as model from './model';
 import homepageView from './homepageView';

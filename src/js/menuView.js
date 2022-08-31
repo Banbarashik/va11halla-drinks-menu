@@ -23,7 +23,11 @@ class menuView extends View {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.exit');
 
-      if (btn) handler();
+      if (!btn) return;
+
+      this.className = 'homepage';
+
+      handler();
     });
   }
 

@@ -1,6 +1,6 @@
 import barEntranceClosedImg from './../assets/images/bar_entrance_closed.png';
-
 import View from './View';
+import { MENU_TRANSITION_SEC } from './config';
 
 class homepageView extends View {
   addHandlerRenderMenu(handler) {
@@ -9,9 +9,18 @@ class homepageView extends View {
 
       if (!entrance) return;
 
-      this.className = 'menu__page';
+      this.classList.add('fade-out');
 
-      handler();
+      setTimeout(() => {
+        this.classList.remove('fade-out', 'homepage');
+        this.classList.add('fade-in', 'menu__page');
+        handler();
+        document.querySelector('.exit').disabled = true;
+      }, (MENU_TRANSITION_SEC + 0.5) * 1000);
+
+      setTimeout(() => {
+        document.querySelector('.exit').disabled = false;
+      }, (MENU_TRANSITION_SEC + 0.5) * 2000);
     });
   }
 

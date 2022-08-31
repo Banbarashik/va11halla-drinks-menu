@@ -1,3 +1,5 @@
+$menu-transition-sec: 1.5s;
+
 .exit {
   position: absolute;
   left: 2rem;
@@ -12,4 +14,31 @@
   color: inherit;
 
   cursor: pointer;
+}
+
+.fade-in {
+  animation: fadeIn $menu-transition-sec steps(5, jump-start);
+}
+
+.fade-out {
+  opacity: 0;
+  animation: fadeOut $menu-transition-sec steps(5, jump-start);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
