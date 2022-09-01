@@ -8,7 +8,7 @@ function controlHomepage() {
   model.setCurrentCategory();
   model.setCurrentSubcategory();
 
-  homepageView.render();
+  homepageView.render(model.state.staff);
 }
 
 function controlMenu(category, subcategory) {
@@ -19,7 +19,8 @@ function controlMenu(category, subcategory) {
 }
 
 function init() {
-  homepageView.render();
+  controlHomepage();
+
   homepageView.addHandlerRenderMenu(controlMenu);
   menuView.addHandlerRenderSubcategoriesAndDrinks(controlMenu);
   menuView.addHandlerReturnToStreet(controlHomepage);

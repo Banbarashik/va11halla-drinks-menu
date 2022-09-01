@@ -3,6 +3,11 @@ import View from './View';
 import { MENU_TRANSITION_SEC } from './config';
 
 class homepageView extends View {
+  constructor() {
+    super();
+    this._addHandlerToggleStaff();
+  }
+
   addHandlerRenderMenu(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const entrance = e.target.closest('.bar-img--entrance');
@@ -21,6 +26,17 @@ class homepageView extends View {
       setTimeout(() => {
         document.querySelector('.exit').disabled = false;
       }, (MENU_TRANSITION_SEC + 0.5) * 2000);
+    });
+  }
+
+  _addHandlerToggleStaff() {
+    this._parentElement.addEventListener('click', function (e) {
+      const posterMin = e.target.closest('.bar-img--poster');
+      const posterMax = e.target.closest('.staff');
+
+      if (posterMin) document.querySelector('.staff').classList.add('opened');
+      if (!posterMax && !posterMin)
+        document.querySelector('.staff').classList.remove('opened');
     });
   }
 
@@ -50,8 +66,34 @@ class homepageView extends View {
           class="bar-img--entrance"
           points="443,383 442,113 547,105 544,361"
         />
+        <polygon class="bar-img--poster" points="823.25 231.25 926.38 266.13 926.38 120.13 823.25 85.44 823.25 231.25"/>
       </svg>
+      <div class="staff">
+        <p class="staff__title">Staff</p>
+          <ul class="staff__list">${this._generateMarkupStaff()}</ul>
+      </div>
     `;
+  }
+
+  _generateMarkupStaff() {
+    return this._data
+      .map(member => {
+        return `
+        <li class="staff__member">
+          <img
+            class="staff__member-img"
+            src="${member.image}"
+            alt="${member.name}"
+          />
+          <div class="staff__member-info">
+            <p class="staff__member-name">Name: ${member.name}</p>
+            <p class="staff__member-position">Position: ${member.position}</p>
+            <p class="staff__member-desc">${member.description}</p>
+          </div>
+        </li>
+      `;
+      })
+      .join('');
   }
 }
 

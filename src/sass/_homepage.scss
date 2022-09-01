@@ -1,3 +1,9 @@
+.homepage {
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 0.8rem;
+  }
+}
+
 .homepage__description {
   position: absolute;
   z-index: 1;
@@ -20,7 +26,8 @@
   max-width: 134rem;
   max-height: 60vh;
 
-  &--entrance {
+  &--entrance,
+  &--poster {
     opacity: 0;
 
     cursor: pointer;
@@ -29,5 +36,55 @@
   @media only screen and (max-width: $bp-medium) {
     bottom: 50%;
     transform: translate(-50%, 50%);
+  }
+}
+
+.staff {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%) scaleY(0);
+  transition: transform 1s;
+  &.opened {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+
+  width: 50em;
+  background-color: #541945;
+
+  &__title {
+    font-size: 6.2em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__member {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+
+    padding: 3em;
+
+    &-img {
+      width: 12em;
+      padding-top: 1em;
+      border: 1px solid white;
+      border-radius: 2em;
+    }
+
+    &-info {
+      font-size: 1.6em;
+    }
+
+    &-info p:not(:last-child) {
+      margin-bottom: 1em;
+    }
   }
 }

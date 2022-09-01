@@ -484,21 +484,21 @@ export const state = {
       position: 'Boss',
       description:
         'A former wrestler and current owner of the bar VA11-HALL-A. Dana, or Boss, has a prosthetic left arm and its origin is shrouded in rumours.',
-      image: '',
+      image: _staffImgs.danaZane,
     },
     {
       name: 'Jill Stingray',
       position: 'Bartender',
       description:
         "Half-French. Avid smoker. Bisexual. Went to college. Drinks a lot of beer because of her implant that allows her to drink lots of beer and not get drunk. Has a cat named Fore, whom she talks to every time she's at home.",
-      image: '',
+      image: _staffImgs.jillStingray,
     },
     {
       name: 'Gillian',
       position: 'Bartender',
       description:
         'Bartender at VA-11 Hall-A with a mysterious past. He is known for occasionally disappearing for a few days, but is otherwise a dependable employee at VA-11 Hall-A.',
-      image: '',
+      image: _staffImgs.gillian,
     },
   ],
 };
