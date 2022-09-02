@@ -2,6 +2,9 @@ import barEntranceClosedImg from './../assets/images/bar_entrance_closed.png';
 import barEntranceOpenedImg from './../assets/images/bar_entrance_opened.png';
 import View from './View';
 import { MENU_TRANSITION_SEC } from './config';
+import { preloadImage } from './helper';
+
+await preloadImage(barEntranceOpenedImg);
 
 class homepageView extends View {
   constructor() {

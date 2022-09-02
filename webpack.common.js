@@ -20,4 +20,7 @@ module.exports = {
       template: 'src/template.html',
     }),
   ],
+  experiments: {
+    topLevelAwait: true,
+  },
 };

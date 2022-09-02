@@ -9,5 +9,13 @@ export function importAll(obj, requireFunction) {
   });
 }
 
+export const preloadImage = src =>
+  new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = resolve;
+    image.onerror = reject;
+    image.src = src;
+  });
+
 export const capitalizeFirstLetter = str =>
   str.replace(/^\w/, c => c.toUpperCase());
