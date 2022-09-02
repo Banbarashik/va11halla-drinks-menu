@@ -1,10 +1,9 @@
 import barEntranceClosedImg from './../assets/images/bar_entrance_closed.png';
 import barEntranceOpenedImg from './../assets/images/bar_entrance_opened.png';
+import BTCicon from './../assets/images/BTC_icon.jpg';
 import View from './View';
 import { MENU_TRANSITION_SEC } from './config';
 import { preloadImage } from './helper';
-
-await preloadImage(barEntranceOpenedImg);
 
 class homepageView extends View {
   constructor() {
@@ -19,6 +18,7 @@ class homepageView extends View {
       if (!entrance) return;
 
       this.classList.add('fade-out');
+      preloadImage(BTCicon);
 
       setTimeout(() => {
         this.classList.remove('fade-out', 'homepage');
@@ -47,12 +47,12 @@ class homepageView extends View {
 
   addHandlerToggleEntrance() {
     const entrance = document.querySelector('.bar-entrance');
-    const streetView = document.querySelector('.bar-img');
-    const toggleEntrance = function (e) {
-      streetView.setAttribute(
-        'xlink:href',
-        e.type === 'mouseenter' ? barEntranceOpenedImg : barEntranceClosedImg
-      );
+    const barImgClosed = document.querySelector('.bar-img--closed');
+    const barImgOpened = document.querySelector('.bar-img--opened');
+
+    const toggleEntrance = function () {
+      barImgClosed.classList.toggle('hidden');
+      barImgOpened.classList.toggle('hidden');
     };
 
     entrance.addEventListener('mouseenter', toggleEntrance);
@@ -79,10 +79,17 @@ class homepageView extends View {
         viewBox="0 0 1005 450.8"
       >
         <image
-        class="bar-img"
+        class="bar-img--closed"
           width="1340"
           height="601"
           xlink:href="${barEntranceClosedImg}"
+          transform="scale(0.75)"
+        ></image>
+        <image
+        class="bar-img--opened hidden"
+          width="1340"
+          height="601"
+          xlink:href="${barEntranceOpenedImg}"
           transform="scale(0.75)"
         ></image>
         <polygon
