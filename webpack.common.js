@@ -9,10 +9,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/i,
-        use: ['html-loader'],
-      },
-      {
         test: /\.(jpeg|jpg|png|gif|svg|webp)$/i,
         type: 'asset/resource',
       },
