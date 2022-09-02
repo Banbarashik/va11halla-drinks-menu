@@ -32,12 +32,13 @@ class homepageView extends View {
 
   _addHandlerToggleStaff() {
     this._parentElement.addEventListener('click', function (e) {
-      const posterMin = e.target.closest('.bar-poster');
-      const posterMax = e.target.closest('.staff');
+      const poster = e.target.closest('.bar-poster');
+      const overlay = e.target.closest('.overlay');
 
-      if (posterMin) document.querySelector('.staff').classList.add('opened');
-      if (!posterMax && !posterMin)
-        document.querySelector('.staff').classList.remove('opened');
+      if (!poster && !overlay) return;
+
+      document.querySelector('.staff').classList.toggle('opened');
+      document.querySelector('.overlay').classList.toggle('hidden');
     });
   }
 
@@ -61,11 +62,11 @@ class homepageView extends View {
   _generateMarkup() {
     return `
       <p class="homepage__description">
-        On a small road just seconds away from the main street, somewhere near
+        "On a small road just seconds away from the main street, somewhere near
         the slums, you can find the Hall A of the BTC-certified bar coded VA-11.
         But that's a mouthful, so we just call it Valhalla — a small oasis in
         the middle of the concrete desert. A fountain of spirits waiting for
-        tired souls.
+        tired souls."
       </p>
       <svg
         class="bar"
@@ -91,6 +92,7 @@ class homepageView extends View {
         <p class="staff__title">Staff</p>
           <ul class="staff__list">${this._generateMarkupStaff()}</ul>
       </div>
+      <div class="overlay hidden"></div>
     `;
   }
 
