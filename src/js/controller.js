@@ -9,6 +9,7 @@ function controlHomepage() {
   model.setCurrentSubcategory();
 
   homepageView.render(model.state.staff);
+  homepageView.addHandlerToggleEntrance();
 }
 
 function controlMenu(category, subcategory) {

@@ -1,4 +1,5 @@
 import barEntranceClosedImg from './../assets/images/bar_entrance_closed.png';
+import barEntranceOpenedImg from './../assets/images/bar_entrance_opened.png';
 import View from './View';
 import { MENU_TRANSITION_SEC } from './config';
 
@@ -10,7 +11,7 @@ class homepageView extends View {
 
   addHandlerRenderMenu(handler) {
     this._parentElement.addEventListener('click', function (e) {
-      const entrance = e.target.closest('.bar-img--entrance');
+      const entrance = e.target.closest('.bar-entrance');
 
       if (!entrance) return;
 
@@ -31,13 +32,30 @@ class homepageView extends View {
 
   _addHandlerToggleStaff() {
     this._parentElement.addEventListener('click', function (e) {
-      const posterMin = e.target.closest('.bar-img--poster');
+      const posterMin = e.target.closest('.bar-poster');
       const posterMax = e.target.closest('.staff');
 
       if (posterMin) document.querySelector('.staff').classList.add('opened');
       if (!posterMax && !posterMin)
         document.querySelector('.staff').classList.remove('opened');
     });
+  }
+
+  addHandlerToggleEntrance() {
+    const entrance = document.querySelector('.bar-entrance');
+    const streetView = document.querySelector('.bar-img');
+    const toggleEntrance = function (e) {
+      streetView.setAttribute(
+        'xlink:href',
+        e.type === 'mouseenter' ? barEntranceOpenedImg : barEntranceClosedImg
+      );
+    };
+
+    entrance.addEventListener('mouseenter', toggleEntrance);
+    entrance.addEventListener('mouseleave', toggleEntrance);
+    entrance.addEventListener('click', () =>
+      entrance.removeEventListener('mouseleave', toggleEntrance)
+    );
   }
 
   _generateMarkup() {
@@ -50,23 +68,24 @@ class homepageView extends View {
         tired souls.
       </p>
       <svg
-        class="bar-img"
+        class="bar"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 1005 450.8"
       >
         <image
+        class="bar-img"
           width="1340"
           height="601"
           xlink:href="${barEntranceClosedImg}"
           transform="scale(0.75)"
         ></image>
         <polygon
-          class="bar-img--entrance"
+          class="bar-entrance"
           points="443,383 442,113 547,105 544,361"
         />
-        <polygon class="bar-img--poster" points="823.25 231.25 926.38 266.13 926.38 120.13 823.25 85.44 823.25 231.25"/>
+        <polygon class="bar-poster" points="823.25 231.25 926.38 266.13 926.38 120.13 823.25 85.44 823.25 231.25"/>
       </svg>
       <div class="staff">
         <p class="staff__title">Staff</p>

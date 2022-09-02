@@ -16,7 +16,7 @@
   font-size: calc($base-font-size + 0.5vw);
 }
 
-.bar-img {
+.bar {
   position: absolute;
   bottom: 10vh;
   left: 50%;
@@ -26,8 +26,8 @@
   max-width: 134rem;
   max-height: 60vh;
 
-  &--entrance,
-  &--poster {
+  &-entrance,
+  &-poster {
     opacity: 0;
 
     cursor: pointer;
