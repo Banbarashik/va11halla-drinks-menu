@@ -13,7 +13,7 @@
   max-width: 57rem;
   margin-left: 10vw;
 
-  font-size: calc($base-font-size + 0.5vw);
+  font-size: calc($base-font-size + 0.4vw);
 }
 
 .bar {
@@ -31,11 +31,6 @@
     opacity: 0;
 
     cursor: pointer;
-  }
-
-  @media only screen and (max-width: $bp-medium) {
-    bottom: 50%;
-    transform: translate(-50%, 50%);
   }
 }
 
